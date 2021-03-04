@@ -1,12 +1,12 @@
 # UNAJ-POC
 Este sistema debe ser un POC de una "bolsa de trabajo online". 
 
-<p><li><ul>Los alumnos de la universidad podrán inscribirse mediante un formulario público (nombre, apellido, tipo y número de documento, fecha de nacimiento, mail personal, carrera, año, y un campo textarea para cargar su experiencia) y quedará en un estado borrador.</ul>
-<ul>Las empresas podrán cargar sus datos mediante un formulario público (nombre de la empresa, CUIT, provincia, localidad, dirección, teléfono, mail) y luego las ofertas laborales (descripción del puesto en un campo textarea, fecha de inicio y fin de la convocatoria) en un estado borrador.</ul>
-<ul>Desde una pantalla de administración (implementar algún login mínimo, no se pide gestión de usuarios), el personal de la universidad podrá aprobar los alumnos y ofertas laborales cargadas pudiendo visualizar todos los datos cargados.</ul>
-<ul>Desde una pantalla pública se podrá listar y buscar los alumnos que buscan trabajo.</ul>
-<ul>Desde una pantalla pública se podrá listar y buscar las ofertas laborales.</ul>
-Deberá tener una página de inicio que lleve a los buscadores y a la carga de los formularios.</li>
+<p><ul><li>Los alumnos de la universidad podrán inscribirse mediante un formulario público (nombre, apellido, tipo y número de documento, fecha de nacimiento, mail personal, carrera, año, y un campo textarea para cargar su experiencia) y quedará en un estado borrador.</li>
+<li>Las empresas podrán cargar sus datos mediante un formulario público (nombre de la empresa, CUIT, provincia, localidad, dirección, teléfono, mail) y luego las ofertas laborales (descripción del puesto en un campo textarea, fecha de inicio y fin de la convocatoria) en un estado borrador.</li>
+<li>Desde una pantalla de administración (implementar algún login mínimo, no se pide gestión de usuarios), el personal de la universidad podrá aprobar los alumnos y ofertas laborales cargadas pudiendo visualizar todos los datos cargados.</li>
+<li>Desde una pantalla pública se podrá listar y buscar los alumnos que buscan trabajo.</li>
+<li>Desde una pantalla pública se podrá listar y buscar las ofertas laborales.</li>
+Deberá tener una página de inicio que lleve a los buscadores y a la carga de los formularios.</li></ul>
 Se evaluará:</p>
 
 La tecnología seleccionada y el uso de la misma (cuan bien explotada fue la tecnología).
