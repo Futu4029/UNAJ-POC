@@ -51,21 +51,53 @@
             </div>
         </div>
     </nav>
-    <section id="hero">
-        <div class="container">
-            <div class="content-center">
-                <h1>¡Tu website para la elección de tu primer trabajo!</h1>
-                <p>Aquí encontrarás todas las ofertas laborales. <br> Si sos estudiante y quieres postularte a tu primer trabajo, esta es tu oportunidad.<br>
-                    Si tienes tu empresa o emprendimiento y estas buscando jovenes emprendedores, este es el sitio.
-                </p>
-            </div>
-        </div>
 
-        <!-- jQuery, Popper.js, Bootstrap JS -->
-        <script src="jquery/jquery-3.3.1.min.js"></script>
-        <script src="popper/popper.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="popper/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 
 </html>
+<?php
+include 'sistema/conexion.php';
+
+// Almacenando los datos obtenidos de los formularios
+$nombre_empresa = $_POST["nombre_empresa"];
+$cuit = $_POST["cuit"];
+$descr = $_POST["descr"];
+$fecha_inicio = $_POST["fecha_inicio"];
+$fecha_fin = $_POST["fecha_fin"];
+
+
+// Creamos la conexion
+$obj = new Conexion();
+$conexion =  $obj->abrirConexion();
+
+
+// Verificar que el registro no sea repetido
+$consulta = "SELECT * FROM oferta_laboral WHERE empresa = '$nombre_empresa' AND cuit_empresa = '$cuit' AND descripcion_puesto = '$descr'";
+$buscarRepetido = $conexion->query($consulta);
+$verificar_usuario = $buscarRepetido->rowCount();
+if ($verificar_usuario > 0) {
+    echo 'No se pudo realizar la carga. La oferta ya esta registrada';
+    exit;
+}
+
+// Consulta para insertar datos
+$insertar = "INSERT INTO oferta_laboral(empresa, cuit_empresa, descripcion_puesto, fecha_inicio, fecha_fin) 
+             VALUES ('$nombre_empresa', '$cuit', '$descr', '$fecha_inicio', '$fecha_fin')";
+
+// Se agregan los datos a la DB
+
+$resultado = $conexion->prepare($insertar);
+$resultado->execute();
+if (!$resultado) {
+    echo 'Error al registrar los datos.';
+} else {
+    echo 'Usuario registrado exitosamente.';
+}
+// cerrar conexion
+$conexion = $obj->cerrarConexion();
+?>

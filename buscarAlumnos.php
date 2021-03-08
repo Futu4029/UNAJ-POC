@@ -1,3 +1,15 @@
+<?php
+include 'sistema/conexion.php';
+// Creamos la conexion
+$obj = new Conexion();
+$conexion =  $obj->abrirConexion();
+
+// Creamos la consulta
+$consulta = "SELECT * FROM alumno";
+$alumnos = $conexion->query($consulta);
+
+?>
+
 <html lang="en">
 
 <head>
@@ -11,6 +23,13 @@
 
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="main.css">
+
+
+    <!--datables CSS básico-->
+    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css">
+
+    <!--datables estilo bootstrap 4 CSS-->
+    <link rel="stylesheet" type="text/css" href="datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
 
 </head>
 
@@ -51,55 +70,57 @@
             </div>
         </div>
     </nav>
+    <div style="height:50px"></div>
+
+    <!--Ejemplo tabla con DataTables-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-responsive">
+                    <table id="tabla" class="table table-striped table-hover table-bordered" style="width:100%">
+                        <thead class="thread-dark">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Tipo de documento</th>
+                                <th>Número de documento</th>
+                                <th>Mail</th>
+                                <th>Carrera</th>
+                                <th>Año</th>
+                                <th>Experiencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            while ($alumno = $alumnos->fetch()) {
+                                echo '<tr style="background-color:#FFF;">
+                                <td>' . $alumno['nombre'] . '</td>
+                                <td>' . $alumno['apellido'] . '</td>
+                                <td>' . $alumno['tipo_documento'] . '</td>
+                                <td>' . $alumno['nro_documento'] . '</td>
+                                <td>' . $alumno['mail'] . '</td>
+                                <td>' . $alumno['carrera'] . '</td>
+                                <td>' . $alumno['anio'] . '</td>
+                                <td>' . $alumno['experiencia'] . '</td>
+                                </tr>';
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery, Popper.js, Bootstrap JS -->
     <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="popper/popper.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- datatables JS -->
+    <script type="text/javascript" src="datatables/datatables.min.js"></script>
+    <!-- JS personalizado -->
+    <script type="text/javascript" src="main.js"></script>
 </body>
 
 </html>
-<?php
-include 'sistema/conexion.php';
-
-// Almacenando los datos obtenidos de los formularios
-$nombre = $_POST["nombre"];
-$apellido = $_POST["apellido"];
-$tipo_documento = $_POST["tipo-documento"];
-$nro_documento = $_POST["nro-documento"];
-$fecha_nac = $_POST["fecha-nac"];
-$email = $_POST["email"];
-$carrera = $_POST["carrera"];
-$año = $_POST["año"];
-$experiencia = $_POST["experiencia"];
-
-// Creamos la conexion
-$obj = new Conexion();
-$conexion =  $obj->abrirConexion();
-
-
-// Verificar que el registro no sea repetido
-$consulta = "SELECT * FROM alumno WHERE tipo_documento = '$tipo_documento' AND nro_documento = '$nro_documento'";
-$buscarRepetido = $conexion->query($consulta);
-$verificar_usuario = $buscarRepetido->rowCount();
-if ($verificar_usuario > 0) {
-    echo 'No se pudo realizar la carga. El usuario ya esta registrado';
-    exit;
-}
-
-// Consulta para insertar datos
-$insertar = "INSERT INTO alumno(nombre, apellido, tipo_documento, nro_documento, fecha_nac, mail, carrera, anio, experiencia) 
-             VALUES ('$nombre', '$apellido', '$tipo_documento', '$nro_documento', '$fecha_nac', '$email', '$carrera', '$año', '$experiencia')";
-
-// Se agregan los datos a la DB
-
-$resultado = $conexion->prepare($insertar);
-$resultado->execute();
-if (!$resultado) {
-    echo 'Error al registrar los datos.';
-} else {
-    echo 'Usuario registrado exitosamente.';
-}
-// cerrar conexion
-$conexion = $obj->cerrarConexion();
-?>

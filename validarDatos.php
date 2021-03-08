@@ -51,13 +51,12 @@
             </div>
         </div>
     </nav>
-    <section id="hero">
+    <section id="validador">
         <div class="container">
             <div class="content-center">
-                <h1>¡Tu website para la elección de tu primer trabajo!</h1>
-                <p>Aquí encontrarás todas las ofertas laborales. <br> Si sos estudiante y quieres postularte a tu primer trabajo, esta es tu oportunidad.<br>
-                    Si tienes tu empresa o emprendimiento y estas buscando jovenes emprendedores, este es el sitio.
-                </p>
+                <h1>VALIDACIÓN DE DATOS</h1>
+                <button type="button" class="btn btn-success"><a href="validarAlumnos.php" id="linkVal">Validar Alumnos</a></button>
+                <button type="button" class="btn btn-success"><a href="validarOfertas.php" id="linkVal">Validar Ofertas</a></button>
             </div>
         </div>
 
