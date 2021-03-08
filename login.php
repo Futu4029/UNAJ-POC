@@ -73,7 +73,7 @@
                         </div>
                         <div class="form-row">
                             <div class="col-7">
-                                <button type="button" class="btn1 mt-1 mb-3"><a href="validarDatos.php">Login</a> </button>
+                                <button type="button" class="btn1 mt-1 mb-3"><a href="aprobarDatos.php">Login</a> </button>
                             </div>
                         </div>
                         <a href="#">¿Has olvidado tu contraseña?</a>
@@ -82,23 +82,7 @@
             </div>
         </div>
     </section>
-    <!--<div class ="container" id='login'>
-        <div class="panel panel-primary">
-            <div class="panel-heading text-center">
-                <h2>LOGIN</h2>
-            </div>
-            <div class="panel-body">
-                <h4>Usuario: </h4>
-                <input type= "text" class="form-control" name="usuario" placeholder="usuario"><br>
-                <h4>Contraseña: </h4>
-                <input type= "text" class="form-control" name="password" placeholder="contraseña"><br>
-            </div> 
-            <div class="panel-footer">
-                <button class="btn btn-primary">Ingresar</button>
-                <button class="btn btn-warning">Registrar</button>
-            </div>
-        </div>
-    </div>-->
+
     <!-- jQuery, Popper.js, Bootstrap JS -->
     <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="popper/popper.min.js"></script>
