@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,47 +8,48 @@
   <title>Bolsa de trabajo</title>
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../resources/bootstrap/css/bootstrap.min.css">
 
   <!-- CSS personalizado -->
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="../../css/main.css">
 
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="index.php"><img src="image/bolsaDeTrabajo.png" class="logo-brand" alt="logo"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <img src="icons/menu.svg" alt="menu" class="navbar-toggler-icon">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../../index.php"><img src="../../img/bolsaDeTrabajo.png" class="logo-brand" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><img src="../../icons/menu.svg"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-lg-auto">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="index.php" id="nicio">Inicio</a>
+            <a class="nav-link" href="../../index.php" id="inicio">Inicio</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="formularioAlumno.php" id="alumnos">Alumnos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="formularioEmpresa.php" id="empresas">Empresas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="formularioOferta.php" id="ofertas_laborales">Ofertas Laborales</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.php" id="login">Log In</a>
-          </li>
-
-          <div class="btn-group">
-            <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown">
-              Busqueda
-            </button>
-            <ul class="dropdown-menu text-lg-auto">
-              <li><a class="dropdown-item" href="buscarAlumnos.php">Buscar alumnos</a></li>
-              <li><a class="dropdown-item" href="buscarEmpleo.php">Buscar empleo</a></li>
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Registrate
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="dropdownMenuButton2">
+              <li><a class="dropdown-item" href="../forms/formularioAlumno.php">Alumnos</a></li>
+              <li><a class="dropdown-item" href="../forms/formularioEmpresa.php">Empresa</a></li>
+              <li><a class="dropdown-item" href="../forms/formularioOferta.php">Ofertas laborales</a></li>
             </ul>
           </div>
+          <li class="nav-item">
+            <div class="dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Busqueda
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item" href="../search/buscarAlumnos.php">Buscar alumnos</a></li>
+                <li><a class="dropdown-item" href="../search/buscarEmpleo.php">Buscar empleo</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <a class="btn btn-danger" href="../login/login.php" role="button">Log In</a>
       </div>
     </div>
   </nav>
@@ -58,7 +60,7 @@
     </p>
   </section>
   <div class="container my-3">
-    <form action="registrarAlumno.php" method="post">
+    <form action="../register/registrarAlumno.php" method="post">
       <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon3">Nombre</span>
         <input type="text" class="form-control" name="nombre">
@@ -98,12 +100,10 @@
       </div>
     </form>
   </div>
-
   <!-- jQuery, Popper.js, Bootstrap JS -->
-  <script src="jquery/jquery-3.3.1.min.js"></script>
-  <script src="popper/popper.min.js"></script>
-  <script src="bootstrap/js/bootstrap.min.js"></script>
-
+  <script src="../../resources/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../resources/popper/popper.min.js"></script>
+  <script src="../../resources/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

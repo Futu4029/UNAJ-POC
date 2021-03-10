@@ -2,7 +2,7 @@ DROP DATABASE UNAJ_BaseDeDatos;
 
 CREATE DATABASE UNAJ_BaseDeDatos;
 
-\c unaj_basededatos
+\c prueba
 
 CREATE TABLE alumno (nombre VARCHAR(30),
                      apellido VARCHAR(30),

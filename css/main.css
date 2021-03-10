@@ -1,6 +1,6 @@
 body {
-    font-family: 'Titillium Web', sans-serif;
-    background-color: rgba(107, 230, 148, 0.103);
+    font-family: sans-serif;
+    background-color: rgba(216, 140, 95, 0.137);
 }
 
 h1 {
@@ -44,21 +44,21 @@ p {
 }
 
 #hero {
-    background-image: url('image/office.png');
+    background-image: url('../img/office.png');
     background-size: cover;
-    padding-top: 90px;
+    padding-top: 50px;
     min-height: 600px;
     color: rgb(0, 0, 0);
 }
 
 #formulario {
-    margin-left: 130px;
+    margin-left: 75px;
 }
 
 #formulario_h1 {
     font-size: 38px;
     font-weight: 300;
-    line-height: 60px;
+    line-height: 50px;
 }
 
 #linkVal:link {
@@ -69,12 +69,6 @@ p {
     max-width: 800px;
     margin: 0 auto 60px auto;
     text-align: center;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
 }
 
 .row {
@@ -93,6 +87,27 @@ img {
     margin-left: -12;
 }
 
+#login {
+    margin: 0;
+    padding: 0;
+}
+
+#login-row {
+    background-image: url('../img/office.png');
+    background-size: cover;
+    padding-top: 50px;
+    min-height: 200px;
+    color: rgb(0, 0, 0);
+    padding-bottom: 50px;
+}
+
+#login-o-box .container #login-row #login-column #login-box {
+    margin-top: 70px;
+    max-width: 600px;
+    height: 300px;
+    border-radius: 3px;
+}
+
 .btn1 {
     border: none;
     outline: none;
@@ -108,4 +123,22 @@ img {
     background-color: white;
     border: 1px solid;
     color: black;
+}
+
+.titulo-error {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 24px;
+    margin: 0 auto 60px auto;
+    color: #ff0000;
+    text-align: center;
+    margin-left: 40;
+}
+
+.titulo-exito {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 24px;
+    margin: 0 auto 60px auto;
+    color: #08bd20;
+    text-align: center;
+    margin-left: 40;
 }

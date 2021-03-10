@@ -1,4 +1,30 @@
-//Código para Datables
+$('#form-login').submit(function(e) {
+    e.preventDefault();
+    var usuario = $.trim($("#usuario").val());
+    var password = $.trim($("#password").val());
+
+    if (usuario.length == 0 || password.length == 0) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Ingrese un usuario o password'
+        });
+        return false;
+
+    } else {
+        Swal.fire({
+            icon: 'success',
+            title: 'Bienvenido',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Ingresar'
+        }).then((result) => {
+            if (result.value) {
+                window.location.href = '../approve/aprobarDatos.php'
+            }
+        });
+
+
+    };
+});
 
 $(document).ready(function() {
     $('#tabla').DataTable({
@@ -18,5 +44,6 @@ $(document).ready(function() {
             },
             "sProcessing": "Procesando...",
         }
+
     });
 });
